@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    /* Blue color for table header */
+    color: #fff;
+    /* Text color for table header */
+    text-align: left;
+}
+
+th {
+    /* Existing styles */
+    text-align: center;
+    /* Add this line to center the text */
+}
+
+.highlight {
+    background-color: #ffc107;
+    /* Yellow color for highlighting */
+    animation: float 2s infinite;
+}
+
+tr:hover {
+    background-color: #ffff99;
+    /* Yellow color on hover */
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Dark Mode CSS */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode table {
+    border: 1px solid #fff;
+}
+
+body.dark-mode th {
+    background-color: #000;
+    color: #fff;
+}
+
+body.dark-mode .highlight {
+    background-color: rgb(25, 74, 181);
+}
+
+body.dark-mode tr:hover {
+    background-color: #444;
+}
+
+.dark-mode-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    .dark-mode-btn {
+        margin-top: 5px;
+        padding: 3px 5px;
+    }
+}

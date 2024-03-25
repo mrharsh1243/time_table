@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daily Schedule</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Daily Schedule</h1>
+        <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <table id="scheduleTable">
+            <tr>
+                <th>Time Slot</th>
+                <th>Activity</th>
+                <th>Duration</th>
+            </tr>
+            <tr class="event" data-time="07:00-07:30">
+                <td>7:00 AM - 7:30 AM</td>
+                <td contenteditable="true">Morning Exercise</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="07:30-08:00">
+                <td>7:30 AM - 8:00 AM</td>
+                <td contenteditable="true">Breakfast and Relaxation</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="08:00-10:00">
+                <td>8:00 AM - 10:00 AM</td>
+                <td contenteditable="true">SAP STUDY</td>
+                <td>2 hours</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="10:00-10:15">
+                <td>10:00 AM - 10:15 AM</td>
+                <td contenteditable="true">Short Break</td>
+                <td>15 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="10:15-11:00">
+                <td>10:15 AM - 11:00 AM</td>
+                <td contenteditable="true">Reasoning Ability</td>
+                <td>45 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="11:00-11:45">
+                <td>11:00 AM - 11:45 AM</td>
+                <td contenteditable="true">Reasoning Ability</td>
+                <td>45 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="11:45-12:15">
+                <td>11:45 AM - 12:15 PM</td>
+                <td contenteditable="true">Lunch and Relaxation</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="12:15-14:15">
+                <td>12:15 PM - 2:15 PM</td>
+                <td contenteditable="true">WORK ON STORY</td>
+                <td>2 hours</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="14:15-14:30">
+                <td>2:15 PM - 2:30 PM</td>
+                <td contenteditable="true">Short Break</td>
+                <td>15 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="14:30-16:30">
+                <td>2:30 PM - 4:30 PM</td>
+                <td contenteditable="true">Numerical Ability</td>
+                <td>2 hours</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="16:30-17:00">
+                <td>4:30 PM - 5:00 PM</td>
+                <td contenteditable="true">Afternoon Snack and Relaxation</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="17:00-18:30">
+                <td>5:00 PM - 6:30 PM</td>
+                <td contenteditable="true">GENERAL AWARENESS</td>
+                <td>1.5 hours</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="18:30-19:00">
+                <td>6:30 PM - 7:30 PM</td>
+                <td contenteditable="true">Evening Exercise</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="19:00-19:30">
+                <td>7:30 PM - 8:30 PM</td>
+                <td contenteditable="true">Dinner and Relaxation</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="19:30-21:30">
+                <td>8:30 PM - 9:30 PM</td>
+                <td contenteditable="true">REVISE EVERYTHING</td>
+                <td>2 hours</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="21:30-22:00">
+                <td>9:30 PM - 10:00 PM</td>
+                <td contenteditable="true">Free time to unwind, read, or engage in a hobby</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+            <tr class="event" data-time="22:00-22:30">
+                <td>10:00 PM - 10:30 PM</td>
+                <td contenteditable="true">Relaxation and winding down</td>
+                <td>30 minutes</td>
+                <td><button onclick="editActivity(this)">Edit</button></td>
+            </tr>
+        </table>
+
+        <p id="computer-time">Computer Time: Loading...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
