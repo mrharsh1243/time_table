@@ -1,12 +1,7 @@
-function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
+function parseTime(timeString) {
+    const [hours, minutes] = timeString.split(':').map(Number);
+    return hours * 3600 + minutes * 60;
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    updateComputerTime();
-    setInterval(updateComputerTime, 1000);
-});
 
 function updateComputerTime() {
     const now = new Date();
@@ -34,13 +29,41 @@ function updateComputerTime() {
     });
 }
 
-function parseTime(timeString) {
-    const [hours, minutes] = timeString.split(':').map(Number);
-    return hours * 3600 + minutes * 60;
+function setNotification(message, timeInSeconds) {
+    setTimeout(() => {
+        alert(message);
+    }, timeInSeconds * 1000);
 }
 
-function editActivity(button) {
-    const row = button.parentNode.parentNode;
-    const activityCell = row.querySelector('td:nth-child(2)');
-    activityCell.focus();
+function scheduleNotifications() {
+    const events = document.querySelectorAll('.event');
+    const currentTime = new Date();
+
+    events.forEach(event => {
+        const timeRange = event.getAttribute('data-time').split('-');
+        const start = parseTime(timeRange[0]);
+        const end = parseTime(timeRange[1]);
+
+        const activity = event.querySelector('td:nth-child(2)').textContent;
+        const startNotificationMessage = `Activity Alert: "${activity}" is starting soon!`;
+        const endNotificationMessage = `Activity Alert: "${activity}" is ending in 5 minutes!`;
+
+        if (currentTime >= start && currentTime <= end) {
+            setNotification(endNotificationMessage, end - currentTime);
+        } else if (currentTime < start) {
+            setNotification(startNotificationMessage, start - currentTime - 300); // Show 5-minute advance notification
+        }
+    });
 }
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateComputerTime();
+    setInterval(updateComputerTime, 1000);
+
+    scheduleNotifications();
+});
