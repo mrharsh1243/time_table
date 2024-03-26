@@ -33,12 +33,6 @@ th {
     text-align: left;
 }
 
-th {
-    /* Existing styles */
-    text-align: center;
-    /* Add this line to center the text */
-}
-
 .highlight {
     background-color: #ffc107;
     /* Yellow color for highlighting */
